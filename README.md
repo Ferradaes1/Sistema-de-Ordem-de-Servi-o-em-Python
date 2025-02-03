@@ -1,57 +1,64 @@
-# Sistema de Ordem de Serviço
+# Sistema de Gerenciamento de Ordens de Serviço 📋⚙️
 
-Este projeto é um sistema de gerenciamento de ordens de serviço desenvolvido em **Python** com interface gráfica utilizando **Tkinter** e banco de dados **SQLite**.
+## Descrição 📝
 
-## 📌 Funcionalidades
+Este projeto é um **Sistema de Gerenciamento de Ordens de Serviço** simples, desenvolvido em **Python** utilizando a biblioteca **Tkinter** para a interface gráfica e o banco de dados **SQLite** para o armazenamento das informações. O sistema permite ao usuário adicionar, visualizar, editar e excluir ordens de serviço de maneira prática e eficiente. 
 
-- **Interface Amigável**: Desenvolvida com Tkinter para facilitar a navegação e uso do sistema.
-- **Banco de Dados Integrado**: Utiliza SQLite para armazenamento e recuperação eficiente dos dados.
-- **CRUD Completo**: Permite a criação, visualização, atualização e exclusão de ordens de serviço.
-- **Personalização de Campos**: Possibilidade de adicionar e remover campos conforme a necessidade.
-- **Relatórios Detalhados**: Exportação de dados e geração de relatórios.
+Este sistema pode ser utilizado em diversos cenários, como oficinas, prestadores de serviço ou qualquer outra área onde seja necessário o controle de ordens de serviço. 🚗🔧
 
-## 🚀 Tecnologias Utilizadas
+## Funcionalidades ✨
 
-- **Python** 
-- **Tkinter**
-- **SQLite**
-- **Pandas** (opcional, para exportação de relatórios)
+- **Cadastro de Ordens de Serviço**: Permite adicionar novas ordens de serviço informando o nome do cliente, a descrição do serviço e a data da ordem. 📝
+- **Visualização das Ordens de Serviço**: Exibe todas as ordens cadastradas de forma organizada. 📑
+- **Edição de Ordens de Serviço**: Permite ao usuário editar os detalhes de uma ordem de serviço já cadastrada. ✏️
+- **Exclusão de Ordens de Serviço**: O usuário pode excluir ordens de serviço que não são mais necessárias. ❌
 
-## 📂 Estrutura do Projeto
+## Tecnologias Utilizadas 🛠️
 
-```
-/ordem_de_servico
-│── main.py            # Arquivo principal do sistema
-│── database.py        # Gerenciamento do banco de dados SQLite
-│── ui.py              # Interface gráfica com Tkinter
-│── README.md          # Documentação do projeto
-│── requirements.txt   # Dependências do projeto
-```
+- **Tkinter**: Biblioteca gráfica do Python para criar interfaces de usuário. 🖥️
+- **SQLite**: Banco de dados relacional simples embutido no Python. 💾
 
-## ▶ Como Executar
+## Estrutura do Projeto 🗂️
 
-1. Clone o repositório:
-   ```sh
-   git clone https://github.com/seu-usuario/ordem-de-servico.git
-   ```
+### 1. **Classe `OrdemServicoApp`**
 
-2. Acesse a pasta do projeto:
-   ```sh
-   cd ordem-de-servico
-   ```
+A classe principal que define o aplicativo e sua interface gráfica.
 
-3. Instale as dependências (se houver):
-   ```sh
-   pip install -r requirements.txt
-   ```
+#### Métodos principais:
 
-4. Execute o sistema:
-   ```sh
-   python main.py
-   ```
+- **`__init__(self, root)`**: Inicializa a interface gráfica e a conexão com o banco de dados. 🌐
+- **`create_table(self)`**: Cria a tabela `ordens_servico` no banco de dados, se não existir. 🏗️
+- **`create_widgets(self)`**: Cria os widgets (rótulos, campos de entrada, botões) para a interface. 🖱️
+- **`add_ordem(self)`**: Adiciona uma nova ordem de serviço ao banco de dados. ➕
+- **`view_ordens(self)`**: Exibe uma lista de todas as ordens de serviço cadastradas. 👀
+- **`edit_ordem(self, listbox)`**: Permite editar os detalhes de uma ordem de serviço. ✍️
+- **`save_edit(self, ordem_id, nome_cliente, descricao, data, edit_window)`**: Salva as alterações feitas em uma ordem de serviço. 💾
+- **`delete_ordem(self, listbox)`**: Exclui uma ordem de serviço do banco de dados. 🗑️
+- **`clear_entries(self)`**: Limpa os campos de entrada após adicionar uma nova ordem de serviço. 🚮
 
-## 📞 Contato
+### 2. **Banco de Dados**
 
-- **GitHub:** [github.com/miguel](https://github.com/miguel)
-- **E-mail:** mferradaes@gmail.com
+- O banco de dados SQLite utilizado chama-se `ordens_servico.db`. 💻
+- A tabela `ordens_servico` possui os seguintes campos:
+  - **id**: Identificador único da ordem de serviço (chave primária). 🔢
+  - **nome_cliente**: Nome do cliente. 👤
+  - **descricao**: Descrição do serviço solicitado. 🛠️
+  - **data**: Data da ordem de serviço. 📅
 
+## Como Rodar o Projeto 🚀
+
+### Pré-requisitos
+
+- Python 3.x 🐍
+- Biblioteca Tkinter (geralmente vem instalada com o Python) 🖥️
+- Biblioteca SQLite (também embutida no Python) 💾
+
+### Passos para execução:
+
+1. Clone ou baixe este repositório. 📂
+2. Abra o terminal ou prompt de comando. 💻
+3. Navegue até o diretório onde o arquivo Python está salvo. 📁
+4. Execute o script com o comando:
+
+```bash
+python nome_do_arquivo.py
