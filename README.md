@@ -61,4 +61,4 @@ A classe principal que define o aplicativo e sua interface gráfica.
 4. Execute o script com o comando:
 
 ```bash
-python nome_do_arquivo.py
+python ordem.py
